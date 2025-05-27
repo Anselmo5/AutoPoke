@@ -1,0 +1,24 @@
+========== NAVBAR ==========
+.nav-logo
+Fruity
+
+.nav-links
+Shop
+About
+Careers
+Partnership
+Contact
+
+.nav-actions
+<i class="ri-user-line"></i>
+<i class="ri-shopping-cart-line"></i>
+<i class="ri-menu-line"></i>
+
+========== HOME ==========
+.home-title
+Pear
+Apple
+Exotic
+
+.home-button
+Shop Taste

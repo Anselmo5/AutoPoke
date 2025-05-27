@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #1e2a4a, #0f1523);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.gba-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #3a4b7d, #1f2a4a);
+  border-radius: 60px;
+  padding: 40px;
+  box-shadow: inset 0 0 30px #000, 0 0 40px rgba(0, 0, 0, 0.7);
+  width: 900px;
+  max-width: 95vw;
+  gap: 40px;
+}
+
+.gba-screen {
+  background: #000;
+  border: 6px solid #555;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  width: 409px;
+  box-shadow: inset 0 0 10px #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#pokemon-img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.pokeball-button {
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, red 40%, white 60%);
+  border: 4px solid #222;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+.pokeball-button:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+}
+
+/* Controles (esquerda) */
+.gba-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dpad {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.d-button {
+  background: #333;
+  border: 2px solid #111;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-radius: 4px;
+}
+
+.d-button.up { top: 0; left: 50%; transform: translateX(-50%); }
+.d-button.down { bottom: 0; left: 50%; transform: translateX(-50%); }
+.d-button.left { left: 0; top: 50%; transform: translateY(-50%); }
+.d-button.right { right: 0; top: 50%; transform: translateY(-50%); }
+.d-button.center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* Botões A/B (direita) */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.a-button, .b-button {
+  background: radial-gradient(circle, #ff4444, #990000);
+  border: 2px solid #222;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: inset -2px -2px 6px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+    .pokeball-button {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%);
+      border: 4px solid black;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+.pokeball-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: black;
+  transform: translateY(-50%);
+}
+
+.pokeball-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 3px solid black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.pokeball-button:active {
+  transform: scale(0.95);
+}
+
+
+.floating-points {
+  position: absolute;
+  color: #ffcc00;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 5px #000;
+  animation: float-up-fade 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes float-up-fade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(1.4);
+  }
+}
+
+
+.pokeball-button:active {
+  transform: scale(0.9);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+
+#pokemon-img {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+#pokemon-img.hidden {
+  opacity: 0;
+}
+
+
+.a-button, .b-button {
+  background: radial-gradient(circle, #ff0000 30%, #aa0000 100%);
+  border: 2px solid #222;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.OptionsButtons{
+  display: flex;
+ align-items: center;
+  margin-top: 3vh;
+  justify-content: center;
+  gap: 20px;
+}
+
+.OptionsButtons button{
+  border-radius: 8px;
+  background: #ffffff;
+  transition: 1s all;
+}
+
+.OptionsButtons button:hover{
+  background: #838383;
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .gba-shell {
+    transform: scale(0.8);
+    width: 100%;
+  }
+}

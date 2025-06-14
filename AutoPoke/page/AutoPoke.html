@@ -12,42 +12,69 @@
 
 </head>
 <body>
-   <div class="gba-container">
-    <!-- Controles à esquerda -->
-    <div class="gba-controls">
-      <div class="dpad">
-        <div class="d-button up"></div>
-        <div class="d-button left"></div>
-        <div class="d-button center"></div>
-        <div class="d-button right"></div>
-        <div class="d-button down"></div>
+
+
+
+  <div class="aling">
+    <div class="alingUser">
+     <div class="UserdateTime"> 
+      <h2 id="nome-jogador"></h2>
+      <div id="date-time"></div>
+    </div>
+     
+      <div>
+         <img src="" id="foto-jogador" alt="">
       </div>
+     
     </div>
 
-    <!-- Tela central -->
-    <div class="gba-screen">
-      <h1 id="pokemon-name">Bulbasaur</h1>
-      <img id="pokemon-img" src="" alt="Imagem do Pokémon atual" />
-      <p id="score">Pontos: 0</p>
-      <button 
-        class="pokeball-button" 
-        onclick="handleClick(event)" 
-        aria-label="Clique para ganhar pontos"
-      ></button>
-      <div class="OptionsButtons">
-        <button>Select</button>
-        <button>Sair</button>
-        <button>Options</button>
+    <div class="gba-container">
+      <!-- Controles à esquerda -->
+      <div class="gba-controls">
+        <div class="dpad">
+          <div class="d-button up"></div>
+          <div class="d-button left"></div>
+          <div class="d-button center"></div>
+          <div class="d-button right"></div>
+          <div class="d-button down"></div>
+        </div>
       </div>
 
-    </div>
+      <!-- Tela central -->
+      <div class="gba-screen">
+        <h1 id="pokemon-name">Bulbasaur</h1>
+        <img id="pokemon-img" src="" alt="Imagem do Pokémon atual" />
+        <p id="score">Pontos: 0</p>
+        <button 
+          class="pokeball-button" 
+          aria-label="Clique para ganhar pontos"
+        ></button>
 
-    <!-- Botões à direita -->
-    <div class="action-buttons">
-      <div class="a-button">A</div>
-      <div class="b-button">B</div>
+        <div class="OptionsButtons">
+          <button>Select</button>
+          <button onclick="ButtonExit()">Sair</button>
+          <button>Options</button>
+        </div>
+
+      </div>
+
+      <!-- Botões à direita -->
+      <div class="action-buttons">
+        <div class="a-button">A</div>
+        <div class="b-button">B</div>
+      </div>
     </div>
   </div>
+
+<div id="modal-finalizacao" class="modal hidden">
+  <div class="modal-content">
+    <img id="modal-foto" src="" alt="Foto do Jogador">
+    <h2 id="modal-nome">Jogador</h2>
+    <p class="modal-pontos">Pontuação: <span id="modal-pontos"></span></p>
+    <button id="btn-ver-ranking">Ver Ranking</button>
+  </div>
+</div>
+
 
   <script src="../assets/js/FectPoke.js"></script>
 </body>

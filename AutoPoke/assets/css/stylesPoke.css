@@ -1,10 +1,13 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
 body {
   margin: 0;
   background: radial-gradient(circle at center, #1e2a4a, #0f1523);
   font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
@@ -19,6 +22,7 @@ body {
   width: 900px;
   max-width: 95vw;
   gap: 40px;
+  margin-top: 10vh;
 }
 
 .gba-screen {
@@ -218,15 +222,226 @@ body {
 }
 
 .OptionsButtons button{
-  border-radius: 8px;
+  border-radius: 10px;
   background: #ffffff;
   transition: 1s all;
+  padding: 0.5rem;
 }
 
 .OptionsButtons button:hover{
   background: #838383;
   color: #ffffff;
 }
+.aling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 40vh;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  border-radius: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.alingUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  flex-direction: row;
+  padding: 1rem;
+  width:95vw;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(16px);
+}
+
+.UserdateTime{
+  display: flex;
+}
+
+#nome-jogador {
+  margin: 1vw;
+  font-size: 1.25rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  font-family: 'Courier New', monospace;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#foto-jogador {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+#foto-jogador:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.15),
+    inset 0 2px 6px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+#foto-jogador:hover {
+  transform: scale(1.05);
+}
+
+#date-time {
+  margin: 1vw;
+  font-size: 1.25rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  font-family: 'Courier New', monospace;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.4s ease forwards;
+}
+
+.modal-content img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-content .modal-pontos {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-content button {
+  background: #00bcd4;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-content button:hover {
+  background: #0097a7;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsivo */
+@media (max-width: 500px) {
+  .alingUser {
+    padding: 1.5rem;
+  }
+
+  #nome-jogador {
+    font-size: 1.5rem;
+  }
+
+  #foto-jogador {
+    width: 100px;
+    height: 100px;
+  }
+
+  #date-time {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
 
 @media (max-width: 480px) {
   .gba-shell {

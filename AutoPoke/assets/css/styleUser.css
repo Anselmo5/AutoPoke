@@ -1,0 +1,783 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Reset básico e configurações globais */
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+}
+
+body {
+    background: radial-gradient(circle at center, #1e2a4a, #0f1523);
+    min-height: 100vh; /* Garante que o gradiente cubra toda a altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Source Code Pro", monospace; /* Define a fonte padrão para o corpo */
+    font-weight: normal; /* Garante que não haja negrito por padrão */
+}
+
+/* --- Bloco Principal do Usuário --- */
+.blocoUser {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente também */
+    min-height: 100vh; /* Garante que o bloco use a altura total da viewport para centralizar */
+    padding: 2rem; /* Padding responsivo para evitar que o conteúdo cole nas bordas em telas pequenas */
+    width: 100%; /* Ocupa a largura total para melhor adaptabilidade */
+}
+
+/* Alinhamento e estilo do cartão do usuário */
+.alingUser {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    /* Usar unidades fluidas ou vmax/vmin para altura pode ser problemático,
+       já que o conteúdo pode variar. Definir uma altura mínima e permitir
+       que o conteúdo a empurre é mais robusto. */
+    min-height: 60vh; /* Mantém uma altura mínima que se adapta à tela */
+    width: 90%; /* Largura responsiva */
+    max-width: 800px; /* Limita a largura máxima para telas grandes */
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em coluna */
+    justify-content: space-between; /* Espaço entre os elementos internos */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+/* --- Botão de Saída (Exit) --- */
+.Exit {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5rem; /* Margem responsiva */
+}
+
+.Exit button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #0f1523;
+    color: #ffffff;
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    font-size: 1rem; /* Tamanho de fonte base */
+}
+
+.Exit button .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Exit button .sign svg {
+    width: 17px;
+    height: 17px; /* Garante proporção */
+}
+
+.Exit button .sign svg path {
+    fill: white;
+}
+
+.Exit button .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1em; /* Relativo ao tamanho da fonte do botão */
+    font-weight: 600;
+    transition-duration: .3s;
+    margin-bottom: 3.5px;
+}
+
+.Exit button:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+    background-color: rgb(255, 65, 65);
+}
+
+.Exit button:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 10px;
+}
+
+.Exit button:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+.Exit button:active {
+    transform: translate(2px, 2px);
+}
+
+/* --- Campo de Busca AI (ask-ai-wrapper) --- */
+.ask-ai-wrapper {
+    display: inline-block;
+    width: 100%; /* Torna o wrapper responsivo */
+    max-width: 280px; /* Mantém a largura máxima original */
+    position: relative;
+    margin: 1rem auto; /* Centraliza e adiciona margem */
+}
+
+.ask-ai-wrapper .ai-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #4a4a4a;
+    border-radius: 12px;
+    padding: 10px 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    overflow: hidden;
+}
+
+.ask-ai-wrapper .ai-input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #333;
+    padding: 6px 10px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ask-ai-wrapper .ai-input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.ask-ai-wrapper .icon-container {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    transition: all 0.5s cubic-bezier(0.7, -0.5, 0.3, 1.5);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.ask-ai-wrapper .ai-icon path {
+    fill: #4a4a4a;
+    transform-origin: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ask-ai-wrapper .underline-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6b6b;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1;
+}
+
+.ask-ai-wrapper .ripple-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 107, 107, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.ask-ai-wrapper .floating-dots {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ask-ai-wrapper .floating-dots span {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.6s cubic-bezier(0.7, -0.5, 0.3, 1.5);
+}
+
+.ask-ai-wrapper .bg-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 107, 107, 0.05),
+        rgba(255, 235, 235, 0.1)
+    );
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 0;
+}
+
+.ask-ai-wrapper .ai-input-container:hover,
+.ask-ai-wrapper .ai-input:focus-within .ai-input-container {
+    border-color: #ff6b6b;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+    transform: translateY(-4px);
+}
+
+.ask-ai-wrapper .ai-input-container:hover .icon-container,
+.ask-ai-wrapper .ai-input:focus-within .icon-container {
+    transform: translateY(-2px) scale(1.1);
+}
+
+.ask-ai-wrapper .ai-input-container:hover .ai-icon path,
+.ask-ai-wrapper .ai-input:focus-within .ai-icon path {
+    fill: #ff6b6b;
+    transform: scale(1.1) rotate(5deg);
+    animation: gentleBounce 0.5s infinite alternate cubic-bezier(0.7, -0.5, 0.3, 1.5);
+}
+
+.ask-ai-wrapper .ai-input-container:hover .underline-effect,
+.ask-ai-wrapper .ai-input:focus-within .underline-effect {
+    width: 100%;
+}
+
+.ask-ai-wrapper .ai-input-container:hover .ripple-circle,
+.ask-ai-wrapper .ai-input:focus-within .ripple-circle {
+    width: 200px;
+    height: 200px;
+}
+
+.ask-ai-wrapper .ai-input-container:hover .floating-dots span,
+.ask-ai-wrapper .ai-input:focus-within .floating-dots span {
+    opacity: 1;
+    animation: floatUp 1.2s infinite cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.ask-ai-wrapper .ai-input-container:hover .bg-fade,
+.ask-ai-wrapper .ai-input:focus-within .bg-fade {
+    opacity: 1;
+}
+
+.ask-ai-wrapper .ai-input:focus {
+    color: #ff6b6b;
+}
+
+@keyframes gentleBounce {
+    0% { transform: scale(1.1) translateY(1px); }
+    100% { transform: scale(1.1) translateY(-1px); }
+}
+
+@keyframes floatUp {
+    0% { transform: translate(var(--x), var(--y)) scale(1); opacity: 0; }
+    50% { transform: translate(var(--x), calc(var(--y) - 15px)) scale(1.3); opacity: 1; }
+    100% { transform: translate(var(--x), calc(var(--y) - 30px)) scale(1); opacity: 0; }
+}
+
+.ask-ai-wrapper .floating-dots span:nth-child(1) { --x: 10px; --y: 10px; animation-delay: 0s; }
+.ask-ai-wrapper .floating-dots span:nth-child(2) { --x: -5px; --y: 5px; animation-delay: 0.2s; }
+.ask-ai-wrapper .floating-dots span:nth-child(3) { --x: 15px; --y: 0px; animation-delay: 0.4s; }
+.ask-ai-wrapper .floating-dots span:nth-child(4) { --x: -10px; --y: 15px; animation-delay: 0.6s; }
+
+/* --- Botão CSS (cssbuttons-io) --- */
+.cssbuttons-io {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    cursor: pointer;
+    border: none;
+    background: #333;
+    color: ghostwhite;
+    overflow: hidden;
+    width: clamp(120px, 14vw, 200px); /* Largura fluida com limites */
+}
+
+.cssbuttons-io svg {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+}
+
+.cssbuttons-io span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8em 1.2em 0.8em 1.05em;
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.cssbuttons-io::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+    transform: scale(0.95);
+}
+
+/* --- Seção de Envio de Informações (envioInfo) --- */
+.envioInfo {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os botões quebrem linha em telas menores */
+    margin-top: 2rem; /* Margem superior mais consistente */
+    gap: 1rem; /* Espaçamento entre os itens */
+}
+
+.envioInfo button {
+    margin: 0.5rem; /* Margem ajustada para espaçamento com gap */
+}
+
+/* --- Dados do Usuário (DadosUsuario e usuario) --- */
+.DadosUsuario {
+    margin-top: 2vh; /* Mantém a margem do original */
+}
+
+.usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.usuario label {
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Espaçamento entre label e imagem */
+    font-size: 1rem; /* Tamanho base da fonte */
+}
+
+.TituloCadastro h2 {
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+    font-size: 1.2em; /* Relativo ao tamanho da fonte do pai, ajustável */
+    margin-left: 0; /* Remove a margem fixa para melhor responsividade */
+    text-align: center; /* Centraliza o título */
+    margin: 1vw;
+}
+
+.usuario img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    margin-top: 1vh; /* Mantém margem */
+}
+
+/* --- Preview da Imagem de Upload --- */
+.upload-label {
+    display: block;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+#foto {
+    display: none;
+}
+
+#preview-container {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 3px solid #000000;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    margin-top: 2vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+}
+
+#preview-container:hover {
+    border-color: #5a5a5a;
+}
+
+#preview-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    font-size: 0;
+}
+
+/* --- Seção de Informações do Usuário (infoUsuarios) --- */
+.infoUsuarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas adaptativas */
+    gap: 1.5rem; /* Espaço entre os inputs */
+    width: 100%;
+    max-width: 600px; /* Mantém a largura máxima original */
+    margin: 2rem auto; /* Centraliza e adiciona margem */
+    padding: 0 1rem; /* Padding horizontal para telas pequenas */
+}
+
+/* Campos de input individuais dentro de .infoUsuarios */
+.infoUsuarios > div { /* Assume que os inputs estão dentro de divs para organização */
+    display: flex;
+    flex-direction: column;
+}
+
+.infoUsuarios label {
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.infoUsuarios input[type="text"],
+.infoUsuarios input[type="email"],
+.infoUsuarios input[type="password"],
+.infoUsuarios input[type="date"] { /* Adiciona outros tipos de input */
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Garante que o input ocupe a largura total do grid item */
+}
+
+.infoUsuarios input[type="text"]:focus,
+.infoUsuarios input[type="email"]:focus,
+.infoUsuarios input[type="password"]:focus,
+.infoUsuarios input[type="date"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* --- Media Queries Avançadas --- */
+
+/* Extra Small devices (smartphones em modo retrato, 320px e acima) */
+@media (max-width: 575.98px) {
+    .alingUser {
+        padding: 15px;
+        min-height: 70vh; /* Ajuste para telas muito pequenas */
+        width: 95%;
+    }
+
+    .blocoUser {
+        padding: 1rem;
+    }
+
+    .Exit button {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .Exit button:hover {
+        width: 100px;
+        border-radius: 30px;
+    }
+
+    .ask-ai-wrapper {
+        max-width: 90%; /* Ocupa mais espaço em telas pequenas */
+        margin-top: 1rem;
+    }
+
+    .infoUsuarios {
+        grid-template-columns: 1fr; /* Uma coluna para smartphones */
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .TituloCadastro h2 {
+        font-size: 1em;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .cssbuttons-io {
+        width: 100%; /* Botão ocupa a largura total */
+        font-size: 16px;
+    }
+
+    .envioInfo {
+        flex-direction: column; /* Botões em coluna em telas pequenas */
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .envioInfo button {
+        width: 90%; /* Ajusta a largura dos botões */
+    }
+}
+
+/* Small devices (smartphones em modo paisagem, 576px e acima) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .alingUser {
+        padding: 20px;
+        min-height: 65vh;
+        width: 90%;
+    }
+
+    .infoUsuarios {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Duas colunas se houver espaço */
+        gap: 1.2rem;
+        margin-top: 2rem;
+    }
+
+    .TituloCadastro h2 {
+        font-size: 1.1em;
+    }
+
+    .cssbuttons-io {
+        width: 160px; /* Largura fixa ou fluida com limites */
+        font-size: 17px;
+    }
+
+    .envioInfo {
+        flex-wrap: wrap; /* Volta para flex-wrap */
+        gap: 1rem;
+    }
+}
+
+/* Medium devices (tablets, 768px e acima) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .alingUser {
+        padding: 24px;
+        min-height: 60vh;
+        width: 85%;
+        max-width: 700px;
+    }
+
+    .infoUsuarios {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas mais definidas */
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .TituloCadastro h2 {
+        font-size: 1.2em;
+        margin-left: 1vw; /* Mantém um pouco da margem original se desejar */
+    }
+
+    .cssbuttons-io {
+        width: 180px;
+        font-size: 18px;
+    }
+}
+
+/* Large devices (desktops, 992px e acima) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .alingUser {
+        padding: 30px;
+        height: 85vh; /* Pode voltar a usar altura fixa se o layout for mais previsível */
+        width: 80%;
+        max-width: 750px;
+    }
+
+    .infoUsuarios {
+        gap: 1.8rem;
+    }
+        .envioInfo{
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+/* Extra large devices (monitores grandes, 1200px e acima) */
+@media (min-width: 1200px) {
+    .alingUser {
+        padding: 36px;
+        height: 85vh;
+        width: 70%;
+        max-width: 800px; /* Mantém o max-width para não esticar demais */
+    }
+
+    .infoUsuarios {
+        gap: 2rem;
+    }
+
+    .cssbuttons-io {
+        width: 14vw; /* Largura fluida, mas controlada pelo max-width do container */
+    }
+    .envioInfo{
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+/* Orientação específica para telas 4K e ultra-wide (Ex: 1920px e acima) */
+@media (min-width: 1920px) {
+    body {
+        font-size: 1.1rem; /* Aumenta a fonte base para 4K */
+    }
+
+    .alingUser {
+        padding: 48px;
+        height: 55vh; /* Ajusta altura para telas muito grandes */
+        max-width: 900px; /* Aumenta o max-width para aproveitar o espaço */
+    }
+
+    .Exit button {
+        width: 55px;
+        height: 55px;
+        font-size: 1.1rem;
+    }
+
+    .Exit button:hover {
+        width: 140px;
+        border-radius: 45px;
+    }
+
+    .ask-ai-wrapper {
+        max-width: 350px; /* Aumenta um pouco para 4K */
+    }
+
+    .ask-ai-wrapper .ai-input {
+        font-size: 1.15rem;
+    }
+
+    .cssbuttons-io {
+        width: 16vw; /* Mantém proporção em telas muito grandes */
+        max-width: 250px; /* Limite para não ficar gigante */
+        font-size: 20px;
+    }
+
+    .TituloCadastro h2 {
+        font-size: 1.5em;
+    }
+
+    #preview-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .infoUsuarios {
+        gap: 2.5rem;
+        max-width: 750px; /* Aumenta o max-width do grid de inputs */
+    }
+}
+
+/* Acessibilidade e Usabilidade (melhorias com responsividade) */
+
+/* Garante que o foco visual seja claro para navegação por teclado */
+:focus-visible {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Oculta elementos apenas visualmente para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Ajustes de fonte para garantir legibilidade em diferentes tamanhos de tela */
+body {
+    font-size: 16px; /* Tamanho de fonte base para rems */
+}
+
+/* Usar rems para espaçamentos e tamanhos de fonte sempre que possível
+   para que se ajustem à fonte base do body */
+.blocoUser {
+    padding: 4.5rem 7.5rem; /* Convertido de 72px 120px para rem */
+}
+.alingUser {
+    padding: 1.5rem; /* Convertido de 24px para rem */
+}
+.Exit button {
+    padding: 0.5rem;
+}
+.ask-ai-wrapper .ai-input-container {
+    padding: 0.625rem 0.875rem; /* Convertido de 10px 14px para rem */
+}
+.ask-ai-wrapper .ai-input {
+    font-size: 1rem;
+    padding: 0.375rem 0.625rem; /* Convertido de 6px 10px para rem */
+}
+.cssbuttons-io span {
+    padding: 0.8em 1.2em 0.8em 1.05em; /* Já em em, bom para escalabilidade */
+}
+.infoUsuarios {
+    gap: 1rem; /* Já em rem */
+}
+.infoUsuarios input {
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+.usuario label {
+    font-size: 1rem;
+}
+.TituloCadastro h2 {
+    font-size: 1.2em;
+}
+
+/* Otimização de performance para animações (se necessário) */
+/* will-change: transform, opacity; em elementos animados para otimização de GPU */
+.Exit button,
+.ask-ai-wrapper .ai-input-container,
+.ask-ai-wrapper .icon-container,
+.ask-ai-wrapper .ai-icon path,
+.ask-ai-wrapper .underline-effect,
+.ask-ai-wrapper .ripple-circle,
+.ask-ai-wrapper .floating-dots span,
+.ask-ai-wrapper .bg-fade,
+.cssbuttons-io::before {
+    will-change: transform, opacity;
+}
+
+/* Garante que o scrollbar seja consistente e não cause layout shifts */
+html {
+    overflow-y: scroll;
+}

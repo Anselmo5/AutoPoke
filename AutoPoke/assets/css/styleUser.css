@@ -28,21 +28,18 @@ body {
     width: 100%; /* Ocupa a largura total para melhor adaptabilidade */
 }
 
-/* Alinhamento e estilo do cartão do usuário */
+
 .alingUser {
     background: #ffffff;
     border-radius: 12px;
     padding: 24px;
-    /* Usar unidades fluidas ou vmax/vmin para altura pode ser problemático,
-       já que o conteúdo pode variar. Definir uma altura mínima e permitir
-       que o conteúdo a empurre é mais robusto. */
-    min-height: 60vh; /* Mantém uma altura mínima que se adapta à tela */
-    width: 90%; /* Largura responsiva */
-    max-width: 800px; /* Limita a largura máxima para telas grandes */
+    min-height: 90vh; 
+    width: 90%;
+    max-width: 800px; 
     display: flex;
-    flex-direction: column; /* Coloca os elementos em coluna */
-    justify-content: space-between; /* Espaço entre os elementos internos */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    flex-direction: column; 
+    justify-content: space-between; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
 }
 
 /* --- Botão de Saída (Exit) --- */
@@ -100,7 +97,7 @@ body {
     font-size: 1em; /* Relativo ao tamanho da fonte do botão */
     font-weight: 600;
     transition-duration: .3s;
-    margin-bottom: 3.5px;
+    margin-bottom: 0.5px;
 }
 
 .Exit button:hover {
@@ -167,6 +164,7 @@ body {
 .ask-ai-wrapper .ai-input::placeholder {
     color: #888;
     font-style: italic;
+    
 }
 
 .ask-ai-wrapper .icon-container {
@@ -614,26 +612,32 @@ body {
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .alingUser {
         padding: 30px;
-        height: 85vh; /* Pode voltar a usar altura fixa se o layout for mais previsível */
-        width: 80%;
+        width: 85%;
         max-width: 750px;
     }
 
     .infoUsuarios {
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.8rem;
     }
-        .envioInfo{
+
+    .envioInfo{
       display: flex;
       flex-direction: column;
+    }
+
+    .cssbuttons-io{
+        bottom: 2vh;
     }
 }
 
 /* Extra large devices (monitores grandes, 1200px e acima) */
 @media (min-width: 1200px) {
     .alingUser {
+        margin-top:-5vh;
         padding: 36px;
-        height: 85vh;
-        width: 70%;
+        height: 95vh;
+        width:100%;
         max-width: 800px; /* Mantém o max-width para não esticar demais */
     }
 

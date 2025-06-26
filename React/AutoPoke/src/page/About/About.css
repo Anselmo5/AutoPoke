@@ -1,0 +1,90 @@
+
+/* About */
+/* HEADER NAV */
+
+
+
+/*  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.containerAbout {
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 2rem;
+  margin-top: 20vh;
+}
+
+body {
+  font-family: 'Clash Display', sans-serif;
+  background: radial-gradient(circle at center, #1e2a4a, #0f1523);
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+
+.containerAbout h1 {
+  font-size: 2.5rem;
+  color: #2b2d42;
+}
+
+.containerAbout h2 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  color: #3f51b5;
+}
+.containerAbout p {
+  margin: 1rem 0;
+}
+.containerAbout
+ ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.container ul li {
+  margin-bottom: 0.5rem;
+}
+
+.containerAbout a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+.voltarAbout {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.voltarAbout a {
+  display: inline-block;
+  background-color: #ffcb05;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.voltarAbout a:hover {
+  background-color: #ffa500;
+}
+
+.containerAbout footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #666;
+}

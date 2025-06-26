@@ -63,7 +63,7 @@ body {
   box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
 }
 
-/* Controles (esquerda) */
+
 .gba-controls {
   display: flex;
   flex-direction: column;
@@ -91,7 +91,7 @@ body {
 .d-button.right { right: 0; top: 50%; transform: translateY(-50%); }
 .d-button.center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
-/* Botões A/B (direita) */
+
 .action-buttons {
   display: flex;
   flex-direction: column;
@@ -395,23 +395,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsivo */
 @media (max-width: 500px) {
   .alingUser {
     padding: 1.5rem;
@@ -431,7 +414,6 @@ body {
   }
 }
 
-/* Animação suave */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -450,11 +432,7 @@ body {
   }
 }
 
-/* =============================
-   🎮 RESPONSIVIDADE - GBA AUTOPOKE
-   ============================= */
 
-/* Telas ultra largas (4K e acima) */
 @media screen and (min-width: 2560px) {
   .gba-container {
     width: 1200px;
@@ -479,7 +457,7 @@ body {
   }
 }
 
-/* Desktops padrão (1440px a 2559px) */
+
 @media screen and (min-width: 1440px) and (max-width: 2559px) {
   .gba-container {
     width: 1000px;
@@ -492,7 +470,6 @@ body {
   }
 }
 
-/* Laptops/tablets landscape (1024px a 1439px) */
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .gba-container {
     width: 90%;
@@ -511,7 +488,7 @@ body {
   }
 }
 
-/* Tablets verticais e smartphones grandes (768px a 1023px) */
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .gba-container {
     flex-direction: column;
@@ -537,7 +514,7 @@ body {
   }
 }
 
-/* Smartphones médios (480px a 767px) */
+
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .gba-container {
     flex-direction: column;
@@ -573,7 +550,7 @@ body {
   }
 }
 
-/* Smartphones pequenos (360px a 479px) */
+
 @media screen and (min-width: 360px) and (max-width: 479px) {
   .gba-container {
     flex-direction: column;
@@ -609,7 +586,7 @@ body {
   }
 }
 
-/* Smartphones minúsculos (até 359px) */
+
 @media screen and (max-width: 359px) {
   .gba-container {
     flex-direction: column;
@@ -645,7 +622,7 @@ body {
   }
 }
 
-/* Ajustes para altura baixa (ex: celulares deitados) */
+
 @media screen and (max-height: 500px) {
   .gba-container {
     flex-direction: column;

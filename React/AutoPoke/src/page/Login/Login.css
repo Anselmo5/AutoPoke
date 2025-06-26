@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fundo da página */
+
 body {
   height: 100vh;
   display: flex;
@@ -15,7 +15,7 @@ body {
   padding: 1rem;
 }
 
-/* Container do formulário */
+
 .login-container {
   background: #fff;
   padding: 2.5rem 2rem;
@@ -26,7 +26,6 @@ body {
   text-align: center;
 }
 
-/* Título */
 .login-container h1 {
   margin-bottom: 1.5rem;
   font-weight: 700;
@@ -34,7 +33,7 @@ body {
   color: #2563eb;
 }
 
-/* Labels */
+
 .login-container label {
   display: block;
   text-align: left;
@@ -46,7 +45,6 @@ body {
 
 
 
-/* Inputs */
 .login-container input[type="email"],
 .login-container input[type="password"] {
   width: 100%;
@@ -64,7 +62,7 @@ body {
   outline: none;
 }
 
-/* Botão */
+
 #login-form button {
   margin-top: 2rem;
   padding: 0.8rem 2rem;
@@ -86,7 +84,7 @@ body {
   outline: none;
 }
 
-/* Link para cadastro */
+
 .login-container .link-cadastro {
   margin-top: 1.5rem;
   font-size: 0.9rem;
@@ -103,9 +101,9 @@ body {
   outline: none;
 }
 
-/* Mensagem de erro */
+
 .login-container .error-msg {
-  color: #dc2626; /* vermelho */
+  color: #dc2626; 
   margin-top: 1rem;
   font-weight: 600;
   font-size: 0.9rem;
@@ -197,7 +195,6 @@ body {
 }
 
 
-/* Responsividade simples */
 @media (max-width: 480px) {
   .login-container {
     padding: 2rem 1rem;

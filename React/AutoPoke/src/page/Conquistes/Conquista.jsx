@@ -21,7 +21,7 @@ const todasConquistas = [
     descricao: "Desbloqueie 10 Pokémons diferentes.",
     icone: "../../assets/img/pokebola.png",
   },
-  // ...adicione outras conquistas aqui
+ 
 ];
 
 const Conquistas = () => {
@@ -43,7 +43,7 @@ const Conquistas = () => {
   }, []);
 
   const handleVoltar = () => {
-    window.location.href = "/"; // Ajuste a rota conforme seu projeto
+    window.location.href = "/"; 
   };
 
   return (

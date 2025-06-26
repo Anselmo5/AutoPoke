@@ -17,7 +17,7 @@ useEffect(() => {
 
   ranking.sort((a, b) => b.pontos - a.pontos);
 
-  // Gerar pódio
+  
   const podiumContainer = document.getElementById("podium");
   if (podiumContainer) {
     podiumContainer.innerHTML = "";
@@ -33,7 +33,7 @@ useEffect(() => {
     });
   }
 
-  // Gerar lista completa
+ 
   const rankingListContainer = document.getElementById("ranking-list");
   if (rankingListContainer) {
     rankingListContainer.innerHTML = "";

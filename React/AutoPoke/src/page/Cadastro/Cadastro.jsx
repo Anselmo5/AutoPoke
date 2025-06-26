@@ -20,7 +20,7 @@ const Cadastro = () => {
       }
   });
 
-  // Gera número de série sequencial ao montar
+
   useEffect(() => {
     const jogadores = JSON.parse(localStorage.getItem("jogadores")) || [];
     const usados = jogadores.map(j => parseInt(j.serie, 10)).filter(n => !isNaN(n));
@@ -28,7 +28,7 @@ const Cadastro = () => {
     setSerie(ultimoNumero + 1);
   }, []);
 
-  // Preview da imagem
+
   const handleImagemChange = (e) => {
     const file = e.target.files[0];
     if (file && file.type.startsWith("image/")) {
@@ -44,12 +44,12 @@ const Cadastro = () => {
     }
   };
 
-  // Clique no preview abre seletor de imagem
+
   const handlePreviewClick = () => {
     fotoInputRef.current.click();
   };
 
-  // Envio do formulário
+
 const handleSubmit = (e) => {
   e.preventDefault();
 
@@ -73,7 +73,7 @@ const handleSubmit = (e) => {
   };
 
 
-  const jogadores = JSON.parse(localStorage.getItem("jogadores")) || [];  // ✅ Corrigido: pegando da chave certa
+  const jogadores = JSON.parse(localStorage.getItem("jogadores")) || [];  
   jogadores.push(novoJogador);
   localStorage.setItem("jogadores", JSON.stringify(jogadores));
 

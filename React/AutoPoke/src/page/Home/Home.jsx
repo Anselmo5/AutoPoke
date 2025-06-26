@@ -5,7 +5,7 @@ import { Autoplay } from 'swiper/modules'
 import "./Home.css"
 import gsap from 'gsap'
 
-// IMPORTAÇÕES MANUAIS
+
 import CenarioCharizard from "../../assets/img/Cenario/CenarioCharizard.png"
 import CenarioBlastoise from '../../assets/img/Cenario/CenarioBlastoise.png'
 import CenarioVenozauro from '../../assets/img/Cenario/CenarioVenozauro.png'

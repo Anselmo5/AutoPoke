@@ -1,4 +1,4 @@
-/* Container perfil */
+
 .perfil-container {
   max-width: 880px;
   margin: 2rem auto;
@@ -65,7 +65,7 @@
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #3b82f6; /* azul vibrante */
+  color: #3b82f6;
 }
 
 .perfil-container h3 {
@@ -96,7 +96,6 @@
   font-size: 1rem;
 }
 
-/* Botão editar perfil */
 #btn-editar {
   margin-top: 2rem;
   padding: 0.75rem 2rem;
@@ -140,7 +139,7 @@
   transition: 1s all;
 }
 
-/* Modal Overlay */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -152,12 +151,12 @@
   padding: 1rem;
 }
 
-/* Mostrar modal */
+
 .modal-overlay[aria-hidden="false"] {
   display: flex;
 }
 
-/* Modal Content */
+
 .modal-content {
   background: #fff;
   border-radius: 16px;
@@ -184,7 +183,7 @@
   font-size: 1.5rem;
 }
 
-/* Form inputs */
+
 .modal-content label {
   display: block;
   font-weight: 600;
@@ -198,7 +197,7 @@
   width: 100%;
   padding: 0.6rem 0.75rem;
   font-size: 1rem;
-  border: 2px solid #cbd5e1; /* cinza claro */
+  border: 2px solid #cbd5e1; 
   border-radius: 10px;
   transition: border-color 0.3s ease;
   box-sizing: border-box;
@@ -212,7 +211,7 @@
   outline: none;
 }
 
-/* Preview da imagem */
+
 #preview-foto {
   margin-top: 0.75rem;
   max-width: 120px;
@@ -223,7 +222,7 @@
   display: none;
 }
 
-/* Botões do modal */
+
 .modal-buttons {
   margin-top: 2rem;
   display: flex;
@@ -254,7 +253,7 @@
 }
 
 .btn-cancelar {
-  background: #e5e7eb; /* cinza claro */
+  background: #e5e7eb;
   color: #374151;
 }
 
@@ -264,7 +263,7 @@
   outline: none;
 }
 
-/* Acessibilidade */
+
 .modal-content:focus {
   outline: none;
 }

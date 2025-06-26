@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -42,7 +42,7 @@ body, html {
   margin-top: 10vh;
 }
 
-/* Cada conquista */
+
 .conquista-item {
   background: #e0e7ff;
   border-radius: 12px;
@@ -61,7 +61,7 @@ body, html {
   transform: translateY(-5px);
 }
 
-/* Ícone da conquista */
+
 .conquista-icone {
   width: 64px;
   height: 64px;
@@ -70,7 +70,7 @@ body, html {
   transition: filter 0.3s ease;
 }
 
-/* Se estiver desbloqueada */
+
 .conquista-item.desbloqueada {
   background: #2563eb;
   color: white;
@@ -81,20 +81,19 @@ body, html {
   filter: drop-shadow(0 0 4px #fff);
 }
 
-/* Título da conquista */
 .conquista-titulo {
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
-/* Descrição */
+
 .conquista-desc {
   font-size: 0.95rem;
   opacity: 0.9;
 }
 
-/* Botão voltar */
+
 .btn-voltar {
   margin-top: 15vh;
   padding: 0.9rem 3rem;
@@ -115,7 +114,7 @@ body, html {
   outline: none;
 }
 
-/* Responsividade */
+
 @media (max-width: 480px) {
   .conquistas-container {
     margin: 1rem;

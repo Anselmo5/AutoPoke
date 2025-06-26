@@ -1,4 +1,4 @@
-/* Container perfil */
+
 .perfil-container {
   max-width: 480px;
   margin: 2rem auto;
@@ -25,7 +25,7 @@ h2 {
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #3b82f6; /* azul vibrante */
+  color: #3b82f6;
 }
 
 .conquistas h3 {
@@ -56,7 +56,7 @@ h2 {
   font-size: 1rem;
 }
 
-/* Botão editar perfil */
+
 #btn-editar {
   margin-top: 2rem;
   padding: 0.75rem 2rem;
@@ -76,7 +76,7 @@ h2 {
   outline: none;
 }
 
-/* Modal Overlay */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -88,12 +88,12 @@ h2 {
   padding: 1rem;
 }
 
-/* Mostrar modal */
+
 .modal-overlay[aria-hidden="false"] {
   display: flex;
 }
 
-/* Modal Content */
+
 .modal-content {
   background: #fff;
   border-radius: 16px;
@@ -120,7 +120,7 @@ h2 {
   font-size: 1.5rem;
 }
 
-/* Form inputs */
+
 .modal-content label {
   display: block;
   font-weight: 600;
@@ -134,7 +134,7 @@ h2 {
   width: 100%;
   padding: 0.6rem 0.75rem;
   font-size: 1rem;
-  border: 2px solid #cbd5e1; /* cinza claro */
+  border: 2px solid #cbd5e1; 
   border-radius: 10px;
   transition: border-color 0.3s ease;
   box-sizing: border-box;
@@ -148,7 +148,7 @@ h2 {
   outline: none;
 }
 
-/* Preview da imagem */
+
 #preview-foto {
   margin-top: 0.75rem;
   max-width: 120px;
@@ -159,7 +159,7 @@ h2 {
   display: none;
 }
 
-/* Botões do modal */
+
 .modal-buttons {
   margin-top: 2rem;
   display: flex;
@@ -190,7 +190,7 @@ h2 {
 }
 
 .btn-cancelar {
-  background: #e5e7eb; /* cinza claro */
+  background: #e5e7eb; 
   color: #374151;
 }
 
@@ -200,7 +200,7 @@ h2 {
   outline: none;
 }
 
-/* Acessibilidade */
+
 .modal-content:focus {
   outline: none;
 }

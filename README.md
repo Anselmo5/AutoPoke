@@ -67,7 +67,7 @@ src/
    ```bash
    npm start
    ```
-   O app estará disponível em [http://localhost:3000](http://localhost:3000).
+   O app estará disponível em [https://warm-tartufo-1f720d.netlify.app/](https://warm-tartufo-1f720d.netlify.app/).
 
 ## 📦 Build para Produção
 

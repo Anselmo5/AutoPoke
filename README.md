@@ -82,10 +82,5 @@ Os arquivos otimizados estarão na pasta `build/`.
 - Design e desenvolvimento: **Anselmo Henrique**
 - Fontes e ícones: [Google Fonts](https://fonts.google.com/), [Remix Icon](https://remixicon.com/)
 
-## 📄 Licença
-
-Este projeto é open-source sob a licença MIT.
-
----
 
 > Feito com ❤️ por Anselmo Henrique — Siga-me para mais projetos!
